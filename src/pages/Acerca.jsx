@@ -188,6 +188,83 @@ const Acerca = () => {
               </a>
             </div>
           </div>
+          <h1 className="text-4xl  my-6 font-bold text-neutral ml-10 md:underline text-center  decoration-wavy underline-offset-[10px] decoration-[#86BF4C] mb-6">
+            Eventos
+          </h1>
+
+          <div className="bg-info text-info-content rounded-xl">
+            <section class="text-info-content body-font">
+              <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-col"></div>
+                <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+                  <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                      <iframe
+                        className="rounded-xl w-full h-full"
+                        src="https://www.youtube.com/embed/zfr_e5SbKCs"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-neutral mt-5">
+                      Sello de Diseño
+                    </h2>
+                    <p class="text-base leading-relaxed mt-2">
+                      Entrevista que le realizaron en Postales Neuquinas a la
+                      directora de creatividad del Copade Neuquén, Sofía
+                      Cantoni. Sobre el cierre de la convocatoria por el
+                      #SelloDeDiseñoNeuquino y como se instrumentará el proceso
+                      de evaluación y distinción por parte del Comité de
+                      Expertos. Hay más de 50 propuestas inscritas.
+                    </p>
+                  </div>
+                  <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+                    <div class="rounded-lg h-64 ">
+                      <iframe
+                        className="rounded-xl w-full h-full"
+                        src="https://www.youtube.com/embed/peaS8gJp8kI"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-neutral mt-5">
+                      Capacitación a emprendedoras y emprendedores.
+                    </h2>
+                    <p class="text-base leading-relaxed mt-2">
+                      La propuesta ofrece capacitación y asesoramiento
+                      personalizado a emprendedoras y emprendedores del sector
+                      creativo de la Provincia del Neuquén.
+                    </p>
+                  </div>
+                  <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                      <iframe
+                        className="rounded-xl w-full h-full"
+                        src="https://www.youtube.com/embed/obl_SNsdm4g"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-neutral mt-5">
+                      Fomento de las Industrias creativas
+                    </h2>
+                    <p class="text-base leading-relaxed mt-2">
+                      2° Aniversario del Centro de Diseño, Creatividad e
+                      Innovación del Neuquén (CDNEU), una iniciativa puesta en
+                      marcha el 14 de junio de 2019 por el Gobernador Omar
+                      Gutiérrez.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </section>
     </div>

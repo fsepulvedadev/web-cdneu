@@ -1,7 +1,7 @@
+@import url("https://fonts.cdnfonts.com/css/circular-std");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.cdnfonts.com/css/circular-std");
 
 @layer base {
   html {

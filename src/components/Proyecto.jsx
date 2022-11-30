@@ -1,10 +1,11 @@
-import React from "react";
+import { useContext } from "react";
 import place1 from "../assets/placeholder1.png";
 import place2 from "../assets/placeholder2.png";
 import { TfiWorld } from "react-icons/tfi";
 import { FiInstagram } from "react-icons/fi";
 import { BsFillPersonFill } from "react-icons/bs";
 import { IoLocationSharp } from "react-icons/io5";
+import { AppContext } from "../context/Provider";
 
 const Proyecto = ({
   nombre,
@@ -15,8 +16,24 @@ const Proyecto = ({
   instagram,
   web,
 }) => {
+  const context = useContext(AppContext);
+  const { handleSeleccion } = context;
+
   return (
-    <div className="card h-[600px] md:w-full bg-base-100 shadow-xl rounded-none rounded-bl-lg rounded-br-lg rounded-tl-lg cursor-pointer">
+    <div
+      onClick={() => {
+        const newSeleccionado = {
+          nombre: nombre,
+          emprendedor: emprendedor,
+          localidad: localidad,
+          info: info,
+          instagram: instagram,
+          web: web,
+        };
+        handleSeleccion(newSeleccionado);
+      }}
+      className="card h-[600px] md:w-full bg-base-100 shadow-xl rounded-none rounded-bl-lg rounded-br-lg rounded-tl-lg cursor-pointer"
+    >
       <figure>
         <img src={place1} className="w-[300px] h-[300px]" alt="imagen" />
       </figure>

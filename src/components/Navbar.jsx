@@ -10,31 +10,20 @@ const Navbar = () => {
     { name: "Acerca de", path: "/acerca" },
   ]);
   const [openMenu, setOpenMenu] = useState(false);
-
-  const handleMenu = () => {
-    setOpenMenu(!openMenu);
-  };
+  const [selectLink, setSelectLink] = useState(false);
 
   return (
     <div className="w-full h-[15vh] md:grid md:grid-cols-3 grid-cols-2 md:place-items-center flex justify-between items-center bg-[url('./assets/placeholder2.png')] bg-cover bg-center shadow-lg">
       <Link to={"/"}>
         <img className="md:w-32 w-24 ml-10 md:m-0" src={logo} alt="logo" />
       </Link>
-      {openMenu ? (
-        <CgClose
-          onClick={() => {
-            handleMenu();
-          }}
-          className={`md:hidden text-3xl mr-10 text-neutral duration-500 transition-all`}
-        />
-      ) : (
-        <CgMenu
-          onClick={() => {
-            handleMenu();
-          }}
-          className={`md:hidden text-3xl mr-10 text-neutral duration-500 transition-all`}
-        />
-      )}
+
+      <CgMenu
+        onClick={() => {
+          setOpenMenu(true);
+        }}
+        className={`md:hidden text-3xl mr-10 text-neutral duration-500 transition-all`}
+      />
       <ul
         className={`md:flex justify-around w-full items-center font-bold hidden `}
       >
@@ -50,12 +39,31 @@ const Navbar = () => {
       </ul>
       <div
         className={`absolute ${
-          openMenu ? "block" : "hidden"
-        } bg-white w-32 rounded-bl-lg rounded-br-lg rounded-tl-lg top-11 right-14`}
+          !openMenu ? "translate-x-[1000px]" : "sm:translate-x-20"
+        } ${
+          selectLink ? "hidden" : "flex"
+        } bg-white w-9/12 rounded-bl-lg rounded-br-lg  rounded-tl-lg top-0 h-full z-10 right-0 flex-col shadow-xl transition duration-500 md:hidden`}
       >
-        <ul className="md:hidden flex flex-col text-center w-full font-bold shadow-xl rounded-xl">
+        <CgClose
+          onClick={() => {
+            setOpenMenu(false);
+          }}
+          className={`md:hidden text-4xl mr-5 mt-5 text-neutral self-end`}
+        />
+        <ul className="md:hidden flex flex-col text-center w-full font-bold  rounded-xl h-full mt-24">
           {links.map((link) => (
-            <Link className="py-1" key={link.name} to={link.path}>
+            <Link
+              onClick={() => {
+                setSelectLink(true);
+                setTimeout(() => {
+                  setSelectLink(false);
+                }, 200);
+                setOpenMenu(false);
+              }}
+              className="py-1 my-2"
+              key={link.name}
+              to={link.path}
+            >
               {link.name}
             </Link>
           ))}

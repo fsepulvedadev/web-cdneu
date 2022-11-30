@@ -25,7 +25,7 @@ const Navbar = () => {
         className={`md:hidden text-3xl mr-10 text-neutral duration-500 transition-all`}
       />
       <ul
-        className={`md:flex justify-around w-full items-center font-bold hidden `}
+        className={`md:flex justify-around w-full items-center font-bold hidden`}
       >
         {links.map((link) => (
           <Link
@@ -39,10 +39,9 @@ const Navbar = () => {
       </ul>
       <div
         className={`absolute ${
-          !openMenu ? "translate-x-[1000px]" : "sm:translate-x-20"
-        } ${
-          selectLink ? "hidden" : "flex"
-        } bg-white w-9/12 rounded-bl-lg rounded-br-lg  rounded-tl-lg top-0 h-full z-10 right-0 flex-col shadow-xl transition duration-500 md:hidden`}
+          !openMenu ? "translate-x-[1000px] hidden" : "sm:translate-x-20 flex"
+        } 
+         bg-white w-9/12 rounded-bl-lg rounded-br-lg  rounded-tl-lg top-0 h-full z-10 right-0 flex-col shadow-xl transition duration-500 md:hidden`}
       >
         <CgClose
           onClick={() => {
@@ -54,10 +53,6 @@ const Navbar = () => {
           {links.map((link) => (
             <Link
               onClick={() => {
-                setSelectLink(true);
-                setTimeout(() => {
-                  setSelectLink(false);
-                }, 200);
                 setOpenMenu(false);
               }}
               className="py-1 my-2"

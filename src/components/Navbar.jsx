@@ -41,7 +41,7 @@ const Navbar = () => {
         className={`absolute ${
           !openMenu ? "translate-x-[1000px] hidden" : "sm:translate-x-20 flex"
         } 
-         bg-white w-9/12 rounded-bl-lg rounded-br-lg  rounded-tl-lg top-0 h-full z-10 right-0 flex-col shadow-xl transition duration-500 md:hidden`}
+         bg-white w-9/12 rounded-bl-lg rounded-br-lg  rounded-tl-lg top-0 h-full z-[500] right-0 flex-col shadow-xl transition duration-500 md:hidden`}
       >
         <CgClose
           onClick={() => {

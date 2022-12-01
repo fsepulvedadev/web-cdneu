@@ -12,13 +12,10 @@ const Inicio = () => {
     const timer = setTimeout(() => {
       if (!fondo) {
         setFondo("fondo1");
-        return;
       } else if (fondo === "fondo1") {
-        setFondo("fondo3");
-        return;
+        setFondo("fondo2");
       } else if (fondo === "fondo2") {
         setFondo("fondo3");
-        return;
       } else if (fondo === "fondo3") {
         setFondo("fondo1");
       }
@@ -30,24 +27,24 @@ const Inicio = () => {
   }, [fondo]);
 
   return (
-    <div className={`hero min-h-[90vh] shadow-xl duration-700`}>
+    <div className={`hero min-h-[80vh] shadow-xl duration-700`}>
       <img
-        className={`absolute w-full duration-1000 h-[90%] brightness-50 ${
-          fondo === "fondo2" ? "opacity-0 z-20" : "opacity-100"
+        className={`relative w-full duration-1000 h-full brightness-50 top-0  ${
+          fondo === "fondo2" ? "opacity-0 " : "opacity-100"
         } `}
         src={fondo2}
         alt=""
       />
       <img
-        className={`absolute w-full duration-1000 h-[90%] brightness-50 ${
-          fondo === "fondo1" ? "opacity-0 z-20" : "opacity-100"
+        className={`relative w-full duration-1000 h-full brightness-50 left-0 top-0 ${
+          fondo === "fondo1" ? "opacity-0 " : "opacity-100"
         } `}
         src={fondo1}
         alt=""
       />
       <img
-        className={`absolute w-full duration-1000 h-[90%] brightness-50 ${
-          fondo === "fondo3" ? "opacity-0 z-20" : "opacity-100"
+        className={`relative w-full duration-1000 h-full brightness-50 top-0 ${
+          fondo === "fondo3" ? "opacity-0" : "opacity-100"
         } `}
         src={fondo3}
         alt=""

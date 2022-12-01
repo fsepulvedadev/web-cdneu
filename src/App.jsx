@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Proyectos from "./pages/Proyectos";
 import Provider from "./context/Provider";
 import Detalle from "./pages/Detalle";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <Provider>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Inicio />} />

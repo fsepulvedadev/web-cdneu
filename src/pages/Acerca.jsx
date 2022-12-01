@@ -10,7 +10,7 @@ const Acerca = () => {
               Sobre CDNEU
             </h1>
             <div className="flex flex-col justify-center items-center  w-full mx-auto">
-              <p className="lg:w-2/3 md:ml-20 leading-relaxed text-base text-success-content bg-success rounded-bl-lg rounded-br-lg rounded-tl-lg p-2 self-start md:my-4 my-2">
+              <p className="lg:w-2/3 md:ml-20 leading-relaxed text-base text-success-content bg-success rounded-bl-lg rounded-br-lg rounded-tl-lg p-2 self-start md:my-4 my-2 shadow-xl">
                 EL <b>CDNEU</b> tiene como misión impulsar la dinámica de los
                 negocios y la competitividad de las empresas, generar y
                 acompañar nuevos emprendimientos creativos, y aportar la
@@ -22,14 +22,14 @@ const Acerca = () => {
                 al desarrollo económico, social y cultural de la Provincia de
                 Neuquén.
               </p>
-              <p className="lg:w-2/3 h-fit p-2 inline-flex self-end  leading-relaxed text-base bg-primary text-primary-content rounded-bl-lg rounded-br-lg rounded-tr-lg md:my-4 my-2">
+              <p className="lg:w-2/3 h-fit p-2 inline-flex self-end  leading-relaxed text-base bg-primary text-primary-content rounded-bl-lg rounded-br-lg rounded-tr-lg md:my-4 my-2 shadow-xl">
                 En vistas de ello, cuenta con una estrategia provincial enfocada
                 en el diseño y la innovación como impulsores del desarrollo
                 local, buscando a partir de una fuerte articulación
                 público-privada generar empleo sostenible en la comunidad de
                 creativos y creativas de la provincia.
               </p>
-              <p className="lg:w-2/3 h-fit p-2  leading-relaxed text-base bg-info text-info-content rounded-bl-lg rounded-br-lg rounded-tl-lg md:my-4 my-2">
+              <p className="lg:w-2/3 h-fit p-2  leading-relaxed text-base bg-info text-info-content rounded-bl-lg rounded-br-lg rounded-tl-lg md:my-4 my-2 shadow-xl">
                 El <b>CDNEU</b> surgió de los intercambios que desde hace años
                 COPADE realiza junto con el ecosistema emprendedor y creativo
                 provincial, siendo una respuesta pensada, creada y puesta al
@@ -41,7 +41,7 @@ const Acerca = () => {
           <h1 className="text-4xl font-bold text-neutral ml-10 md:underline  decoration-wavy underline-offset-[10px] decoration-[#86BF4C] mb-6">
             Lineas de Trabajo
           </h1>
-          <div className="flex flex-wrap bg-warning rounded-xl">
+          <div className="flex flex-wrap bg-warning rounded-xl shadow-xl">
             <div className="lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
               <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
                 Incubadora Creativa
@@ -192,7 +192,7 @@ const Acerca = () => {
             Eventos
           </h1>
 
-          <div className="bg-info text-info-content rounded-xl">
+          <div className="bg-info text-info-content rounded-xl shadow-xl">
             <section class="text-info-content body-font">
               <div class="container px-5 py-24 mx-auto">
                 <div class="flex flex-col"></div>

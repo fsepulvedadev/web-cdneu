@@ -32,7 +32,7 @@ const Proyecto = ({
         };
         handleSeleccion(newSeleccionado);
       }}
-      className="card h-[600px] md:w-full bg-base-100 shadow-xl rounded-none rounded-bl-lg rounded-br-lg rounded-tl-lg cursor-pointer"
+      className="card h-[600px] md:w-full bg-base-100 shadow-xl rounded-none rounded-bl-lg rounded-br-lg rounded-tl-lg cursor-pointer hover:scale-105 duration-500 hover:shadow-warning"
     >
       <figure>
         <img src={place1} className="w-[300px] h-[300px]" alt="imagen" />
@@ -62,7 +62,7 @@ const Proyecto = ({
           </p>
         </div>
         <p>
-          {/* {`${String(info).substring(0, 200)} ...`} */} {info}
+          {`${String(info).substring(0, 200)} ...`} {/* {info} */}
         </p>
         <div className="flex justify-end items-center my-2">
           {web && (

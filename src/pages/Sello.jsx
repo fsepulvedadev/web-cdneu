@@ -53,7 +53,7 @@ const Sello = () => {
           </div>
           <a
             className="btn md:w-2/4 mx-auto my-5 md:text-lg text-white"
-            href="src\assets\catalogo-2021.pdf"
+            href="./assets/catalogo-2021.pdf"
             download="Catalogo Sello de Diseño Neuquino 2021"
           >
             Descargar Catalogo

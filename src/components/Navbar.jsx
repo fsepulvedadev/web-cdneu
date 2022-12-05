@@ -7,6 +7,7 @@ const Navbar = () => {
   const [links, setLinks] = useState([
     { name: "Inicio", path: "/" },
     { name: "Proyectos", path: "/proyectos" },
+    { name: "Catalogo diseño", path: "/catalogo-2021" },
     { name: "Acerca de", path: "/acerca" },
   ]);
   const [openMenu, setOpenMenu] = useState(false);

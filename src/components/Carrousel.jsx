@@ -1,33 +1,41 @@
-import React from "react";
+import uno from "../assets/catalogo-1.jpg";
+import dos from "../assets/catalogo-2.jpg";
+import tres from "../assets/catalogo-3.jpg";
 
 const Carrousel = () => {
   return (
-    <div
-      id="carouselExampleSlidesOnly"
-      className="carousel slide relative"
-      data-bs-ride="carousel"
-    >
-      <div className="carousel-inner relative w-full overflow-hidden">
-        <div className="carousel-item active relative float-left w-full">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
-            className="block w-full"
-            alt="Wild Landscape"
-          />
+    <div className="carousel md:w-2/3 rounded-xl h-auto">
+      <div id="slide1" className="carousel-item relative w-full">
+        <img src={uno} className="w-full" />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide3" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide2" className="btn btn-circle">
+            ❯
+          </a>
         </div>
-        <div className="carousel-item relative float-left w-full">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-            className="block w-full"
-            alt="Camera"
-          />
+      </div>
+      <div id="slide2" className="carousel-item relative w-full">
+        <img src={dos} className="w-full" />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide3" className="btn btn-circle">
+            ❯
+          </a>
         </div>
-        <div className="carousel-item relative float-left w-full">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-            className="block w-full"
-            alt="Exotic Fruits"
-          />
+      </div>
+      <div id="slide3" className="carousel-item relative w-full">
+        <img src={tres} className="w-full" />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide1" className="btn btn-circle">
+            ❯
+          </a>
         </div>
       </div>
     </div>

@@ -15,10 +15,16 @@ const Proyecto = ({
   tipo,
   instagram,
   web,
+  logo,
+  img1,
+  img2,
+  img3,
+  categoria,
 }) => {
   const context = useContext(AppContext);
   const { handleSeleccion } = context;
 
+  console.log(nombre, categoria);
   return (
     <div
       onClick={() => {
@@ -29,13 +35,22 @@ const Proyecto = ({
           info: info,
           instagram: instagram,
           web: web,
+          logo,
+          img1,
+          img2,
+          img3,
+          categoria: categoria,
         };
         handleSeleccion(newSeleccionado);
       }}
       className="card h-[600px] md:w-full bg-base-100 shadow-xl rounded-none rounded-bl-lg rounded-br-lg rounded-tl-lg cursor-pointer hover:scale-105 duration-500 hover:shadow-warning"
     >
       <figure>
-        <img src={place1} className="w-[300px] h-[300px]" alt="imagen" />
+        <img
+          src={logo ? logo : place1}
+          className="w-[300px] h-[300px]"
+          alt="imagen"
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{nombre}</h2>
@@ -77,8 +92,18 @@ const Proyecto = ({
           )}
         </div>
         <div className="card-actions justify-end">
-          <div className="badge badge-warning">Fashion</div>
-          <div className="badge badge-accent">Products</div>
+          <div className="w-full flex items-center justify-center">
+            {categoria == "Producto" ? (
+              <div className="badge badge-accent">Producto</div>
+            ) : categoria == "Servicio" ? (
+              <div className="badge badge-success">Servicio</div>
+            ) : categoria == "Servicio/Producto" ? (
+              <>
+                <div className="badge badge-accent">Producto</div>
+                <div className="badge badge-success ml-2">Servicio</div>
+              </>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

@@ -154,6 +154,11 @@ const Proyectos = () => {
               instagram={proyect["INSTAGRAM"]}
               web={proyect["WEB"]}
               tipo={proyect["tipo"]}
+              logo={proyect["LOGO"]}
+              img1={proyect["IMG1"]}
+              img2={proyect["IMG2"]}
+              img3={proyect["IMG3"]}
+              categoria={proyect["CATEGORÍA"]}
             />
           ))}
         </div>

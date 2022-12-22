@@ -29,7 +29,7 @@ const Detalle = () => {
 
   return (
     <div className=" w-full bg-white bg-[url('./assets/placeholder3.png')] bg-contain flex justify-center items-center">
-      <div className="toast toast-start md:mb-5 md:ml-5 cursor-pointer text-sm">
+      <div className="toast toast-start md:mb-5 md:ml-5 cursor-pointer text-sm z-40">
         <Link
           className="alert alert-error shadow-lg hover:bg-[#e36056]"
           to={"/proyectos"}
@@ -51,7 +51,7 @@ const Detalle = () => {
             ) : categoria == "Servicio/Producto" ? (
               <>
                 <div className="badge badge-accent">Producto</div>
-                <div className="badge badge-success">Servicio</div>
+                <div className="badge badge-success ml-2">Servicio</div>
               </>
             ) : null}
           </div>

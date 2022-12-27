@@ -6,6 +6,7 @@ import Detalle from "./Detalle";
 
 const Proyectos = () => {
   const [proyectosData, setProyectosData] = useState([]);
+  const [sinResultados, setSinResultados] = useState(false);
   const [dataInc20, setDataInc20] = useState([]);
   const [dataInc21, setDataInc21] = useState([]);
   const [dataInc22, setDataInc22] = useState([]);
@@ -97,6 +98,21 @@ const Proyectos = () => {
     }
   };
 
+  const handleBusqueda = (palabra) => {
+    const value = palabra.toLowerCase().trim();
+    const busqueda = dataDeTodos.filter((proyecto) => {
+      if (proyecto["EMPRENDIMIENTO "].toLowerCase().indexOf(value) != -1) {
+        setSinResultados(false);
+        return proyecto;
+      } else {
+        setSinResultados(true);
+      }
+    });
+
+    setProyectosData(busqueda);
+    console.log(proyectosData);
+  };
+
   return (
     <>
       <div className="grid grid-row-3 place-items-center   w-11/12 mx-auto min-h-screen">
@@ -104,37 +120,68 @@ const Proyectos = () => {
           Proyectos CDNEU 2020-2022
         </h1>
         {!cargando && (
-          <div className="w-10/12 mx-auto font-bold mt-4 grid md:grid-cols-4 grid-cols-2 grid-row-3 gap-2 place-items-center ">
-            <h4
-              onClick={() => handleFiltrado("inc-2020")}
-              className="badge p-4 md:text-base text-xs  rounded-none hover:scale-110 duration-300 cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg badge-accent"
-            >
-              Incubadora 2020
-            </h4>
-            <h4
-              onClick={() => handleFiltrado("inc-2021")}
-              className="badge p-4 md:text-base text-xs  rounded-none hover:scale-110 duration-300 cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg badge-info"
-            >
-              Incubadora 2021
-            </h4>
-            <h4
-              onClick={() => handleFiltrado("inc-2022")}
-              className="badge p-4 md:text-base text-xs  rounded-none hover:scale-110 duration-300 cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg badge-success"
-            >
-              Incubadora 2022
-            </h4>
-            <h4
-              onClick={() => handleFiltrado("sello-2021")}
-              className="badge  p-4 md:text-base text-xs  rounded-none hover:scale-110 duration-300 cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg badge-warning"
-            >
-              Sello de diseño 2021
-            </h4>
+          <div className=" mx-auto font-bold mt-4 grid md:grid-cols-4 grid-cols-4 md:grid-rows-3 grid-rows-4 gap-2 place-items-center w-full">
+            <div className="grid md:grid-rows-1 md:grid-cols-4 grid-cols-2 grid-rows-2 md:gap-4 gap-2 md:row-span-1 row-span-2 col-span-4">
+              <h4
+                onClick={() => handleFiltrado("inc-2020")}
+                className="badge min-w-full p-4 md:text-base text-xs  rounded-none hover:scale-110 duration-300 cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg badge-accent"
+              >
+                Incubadora 2020
+              </h4>
+              <h4
+                onClick={() => handleFiltrado("inc-2021")}
+                className="badge min-w-full p-4 md:text-base text-xs  rounded-none hover:scale-110 duration-300 cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg badge-info"
+              >
+                Incubadora 2021
+              </h4>
+              <h4
+                onClick={() => handleFiltrado("inc-2022")}
+                className="badge min-w-full p-4 md:text-base text-xs  rounded-none hover:scale-110 duration-300 cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg badge-success"
+              >
+                Incubadora 2022
+              </h4>
+              <h4
+                onClick={() => handleFiltrado("sello-2021")}
+                className="badge min-w-full  p-4 md:text-base text-xs  rounded-none hover:scale-110 duration-300 cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg badge-warning"
+              >
+                Sello de diseño 2021
+              </h4>
+            </div>
+
             <h4
               onClick={() => handleFiltrado("todos")}
-              className="badge p-4 rounded-none col-span-2 md:col-span-4 md:w-2/5 w-full bg-[url('./assets/banner2.png')] bg-bottom-left hover:bg-right-top border-none text-neutral font-bold duration-500 transition-all cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg mx-auto"
+              className="badge p-4 rounded-none col-span-4 md:col-span-4 md:w-2/5 w-full bg-[url('./assets/banner2.png')] bg-bottom-left hover:bg-right-top border-none text-neutral font-bold duration-500 transition-all cursor-pointer rounded-bl-lg rounded-br-lg rounded-tl-lg mx-auto"
             >
               Ver todos
             </h4>
+            <div className="form-control col-span-4 w-full flex justify-center">
+              <div className="input-group mx-auto">
+                <input
+                  type="text"
+                  placeholder="Buscar proyectos"
+                  onChange={(e) => {
+                    handleBusqueda(e.target.value);
+                  }}
+                  className="input input-bordered md:w-1/3 w-3/4 ml-auto focus:outline-none"
+                />
+                <button className="btn btn-square mr-auto bg-[url('./assets/banner2.png')] bg-top border-none bg-cover">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-secondary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         )}
         {cargando && (

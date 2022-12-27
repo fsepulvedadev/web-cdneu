@@ -24,7 +24,6 @@ const Proyecto = ({
   const context = useContext(AppContext);
   const { handleSeleccion } = context;
 
-  console.log(nombre, categoria);
   return (
     <div
       onClick={() => {
